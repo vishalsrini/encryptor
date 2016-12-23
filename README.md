@@ -1,0 +1,2 @@
+# encryptor
+Encrypt a file
