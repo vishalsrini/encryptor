@@ -47,7 +47,9 @@
 		          document.getElementById('EncryptFile').style.display = "block";
 				firebase.database().ref(user.uid+'/').orderByValue().on("value", function(data) {
 				   data.forEach(function(data) {
-				      console.log("The file name is - " + data.val().name + " ;Question is -" + data.val().question);
+					document.getElementById('dFileDetails').innerHTML += "<button onclick='alert(\""+data.val().question+"\")'>"+data.val().name+"</button>";
+				     	console.log("<button onclick='alert(\""+data.val().question+"\")'>"+data.val().name+"</button>");
+				     	console.log("The file name is - " + data.val().name + " ;Question is -" + data.val().question);
 				   });
 				});
 		          // [START_EXCLUDE]
@@ -202,9 +204,7 @@
 
 				<div class="content if-decrypt">
 					<h1>Enter the pass phrase</h1>
-					<p> These are the files that you currently have </p>
-					<p id="dFileDetails"> </p>
-					<h2>Enter the pass phrase that was used to encrypt this file. It is not possible to decrypt it without it.</h2>
+					<h2 id="dFileDetails"></h2>
 
 					<input type="password" />
 					<a class="button process red">Decrypt!</a>
