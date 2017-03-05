@@ -90,8 +90,8 @@ $(function(){
 			
 			firebase.database().ref(myUserId+'/').set(
 			{
-				name: document.getElementById('fName').value(),
-				question: document.getElementById('fQuestion').value()
+				name: document.getElementById('fName').value,
+				question: document.getElementById('fQuestion').value
 			}
 			)
 			console.log(myUserId);
