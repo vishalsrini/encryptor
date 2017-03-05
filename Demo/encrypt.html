@@ -108,6 +108,7 @@
 		          var providerData = user.providerData;
 				firebase.database().ref(uid+'/').on("value", function(data) {
 				   data.forEach(function(data) {
+					   document.getElementById('dFileDetails').innerHTML += "<button onclick='alert(\'"+data.val().question+"\')'>"+data.val().name+"</button>";
 				      console.log("The file name is - " + data.val().name + " Question is -" + data.val().question);
 				   });
 				});
@@ -200,6 +201,8 @@
 
 				<div class="content if-decrypt">
 					<h1>Enter the pass phrase</h1>
+					<p> These are the files that you currently have </p>
+					<p id="dFileDetails"> </p>
 					<h2>Enter the pass phrase that was used to encrypt this file. It is not possible to decrypt it without it.</h2>
 
 					<input type="password" />
