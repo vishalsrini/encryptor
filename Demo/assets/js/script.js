@@ -90,7 +90,7 @@ $(function(){
 			var fname = document.getElementById('fName').value;
 			var fques = document.getElementById('fQuestion').value;
 			
-			firebase.database().ref(myUserId+'/').set(
+			firebase.database().ref(myUserId+'/').push(
 			{
 				"name": fname,
 				"question": fques
