@@ -103,12 +103,11 @@
 		          var isAnonymous = user.isAnonymous;
 		          var uid = user.uid;
 		          var providerData = user.providerData;
-				var deFiles = firebase.database().ref(user.userId+'/').on("value", function(snapshot) {
+				firebase.database().ref(user.userId+'/').on("value", function(snapshot) {
 				   console.log(snapshot.val());
 				}, function (error) {
 				   console.log("Error: " + error.code);
 				});
-				console.log(deFiles);
 		          // [START_EXCLUDE]
 		          document.getElementById('quickstart-sign-in').innerHTML = 'SignOut';
 		          document.getElementById('DecryptFile').style.display = "block";
