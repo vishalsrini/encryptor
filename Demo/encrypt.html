@@ -104,7 +104,7 @@
 		          var uid = user.uid;
 		          var providerData = user.providerData;
 				var deFiles = firebase.database().ref(user.userId+'/');
-				console.log(JSON.stringify(deFiles));
+				console.log(deFiles);
 		          // [START_EXCLUDE]
 		          document.getElementById('quickstart-sign-in').innerHTML = 'SignOut';
 		          document.getElementById('DecryptFile').style.display = "block";
