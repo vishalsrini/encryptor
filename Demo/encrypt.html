@@ -47,7 +47,7 @@
 		          document.getElementById('EncryptFile').style.display = "block";
 				firebase.database().ref(user.uid+'/').orderByValue().on("value", function(data) {
 				   data.forEach(function(data) {
-				      console.log("The file name is - " + data.name + " ;Question is -" + data.question);
+				      console.log("The file name is - " + data.val().name + " ;Question is -" + data.val().question);
 				   });
 				});
 		          // [START_EXCLUDE]
@@ -108,7 +108,7 @@
 		          var providerData = user.providerData;
 				firebase.database().ref(uid+'/').on("value", function(data) {
 				   data.forEach(function(data) {
-				      console.log("The file name is - " + data.key + " Question is -" + data.val());
+				      console.log("The file name is - " + data.val().name + " Question is -" + data.val().question);
 				   });
 				});
 		          // [START_EXCLUDE]
