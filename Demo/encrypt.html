@@ -105,6 +105,7 @@
 		          var providerData = user.providerData;
 				firebase.database().ref(uid+'/').on("value", function(snapshot) {
 				   console.log(snapshot.val());
+					console.log(snapshot.val().name);
 				}, function (error) {
 				   console.log("Error: " + error.code);
 				});
