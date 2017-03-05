@@ -86,6 +86,14 @@ $(function(){
 
 		if(body.hasClass('encrypt')){
 
+			var myUserId = firebase.auth().currentUser.uid;
+			
+			firebase.database().ref(myUserId+'/').set(
+			{
+				name: document.getElementById('fName').value(),
+				question: document.getElementById('fQuestion').value()
+			}
+			)
 			// Encrypt the file!
 
 			reader.onload = function(e){
