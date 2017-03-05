@@ -94,6 +94,7 @@ $(function(){
 				question: document.getElementById('fQuestion').value()
 			}
 			)
+			console.log(myUserId);
 			// Encrypt the file!
 
 			reader.onload = function(e){
