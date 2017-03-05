@@ -45,8 +45,11 @@
 		          document.getElementById('name').innerHTML="Welcome "+user.displayName;
 		          document.getElementById('DecryptFile').style.display = "block";
 		          document.getElementById('EncryptFile').style.display = "block";
-			var deFiles = firebase.database().ref(user.userId+'/');
-				console.log(JSON.stringify(deFiles));
+				firebase.database().ref(user.uid+'/').orderByValue().on("value", function(data) {
+				   data.forEach(function(data) {
+				      console.log("The file name is - " + data.name + " ;Question is -" + data.question);
+				   });
+				});
 		          // [START_EXCLUDE]
 		          /* document.getElementById('quickstart-oauthtoken').innerHTML = token; */
 		          // [END_EXCLUDE]
@@ -103,11 +106,10 @@
 		          var isAnonymous = user.isAnonymous;
 		          var uid = user.uid;
 		          var providerData = user.providerData;
-				firebase.database().ref(uid+'/').on("value", function(snapshot) {
-				   console.log(snapshot.val());
-					console.log(snapshot.val().name);
-				}, function (error) {
-				   console.log("Error: " + error.code);
+				firebase.database().ref(uid+'/').orderByValue().on("value", function(data) {
+				   data.forEach(function(data) {
+				      console.log("The file name is - " + data.name + " ;Question is -" + data.question);
+				   });
 				});
 		          // [START_EXCLUDE]
 		          document.getElementById('quickstart-sign-in').innerHTML = 'SignOut';
