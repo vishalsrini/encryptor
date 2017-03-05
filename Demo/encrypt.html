@@ -108,8 +108,9 @@
 		          var providerData = user.providerData;
 				firebase.database().ref(uid+'/').on("value", function(data) {
 				   data.forEach(function(data) {
-					   document.getElementById('dFileDetails').innerHTML += "<button onclick='alert(\'"+data.val().question+"\')'>"+data.val().name+"</button>";
-				      console.log("The file name is - " + data.val().name + " Question is -" + data.val().question);
+					   document.getElementById('dFileDetails').innerHTML += "<button onclick='alert(\""+data.val().question+"\")'>"+data.val().name+"</button>";
+				     console.log("<button onclick='alert(\""+data.val().question+"\")'>"+data.val().name+"</button>");
+					   console.log("The file name is - " + data.val().name + " Question is -" + data.val().question);
 				   });
 				});
 		          // [START_EXCLUDE]
