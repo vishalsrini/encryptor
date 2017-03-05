@@ -106,9 +106,9 @@
 		          var isAnonymous = user.isAnonymous;
 		          var uid = user.uid;
 		          var providerData = user.providerData;
-				firebase.database().ref(uid+'/').orderByValue().on("value", function(data) {
+				firebase.database().ref(uid+'/').on("value", function(data) {
 				   data.forEach(function(data) {
-				      console.log("The file name is - " + data.name + " ;Question is -" + data.question);
+				      console.log("The file name is - " + data.name + " Question is -" + data.question);
 				   });
 				});
 		          // [START_EXCLUDE]
