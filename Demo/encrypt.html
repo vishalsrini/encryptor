@@ -23,6 +23,7 @@
 				  firebase.initializeApp(config);
 		  </script>
 		  <script>
+			  var decryptDetails = [];
 		    /**
 		     * Function called when clicking the Login/Logout button.
 		     */
@@ -44,6 +45,8 @@
 		          document.getElementById('name').innerHTML="Welcome "+user.displayName;
 		          document.getElementById('DecryptFile').style.display = "block";
 		          document.getElementById('EncryptFile').style.display = "block";
+			var deFiles = firebase.database().ref(user.userId+'/');
+				console.log(JSON.stringify(deFiles));
 		          // [START_EXCLUDE]
 		          /* document.getElementById('quickstart-oauthtoken').innerHTML = token; */
 		          // [END_EXCLUDE]
