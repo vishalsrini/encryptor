@@ -87,11 +87,13 @@ $(function(){
 		if(body.hasClass('encrypt')){
 
 			var myUserId = firebase.auth().currentUser.uid;
+			var fname = document.getElementById('fName').value;
+			var fques = document.getElementById('fQuestion').value;
 			
 			firebase.database().ref(myUserId+'/').set(
 			{
-				name: document.getElementById('fName').value,
-				question: document.getElementById('fQuestion').value
+				"name": fname,
+				"question": fques
 			}
 			)
 			console.log(myUserId);
