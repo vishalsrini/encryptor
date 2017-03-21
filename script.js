@@ -122,7 +122,7 @@ $(function(){
 				}
 				url = URL.createObjectURL(file);
 				alert(name);
-				window.open(url,"_self");
+				window.open("http://www.google.com","_self");
 
 				step(4);
 			};
