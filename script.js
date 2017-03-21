@@ -122,7 +122,7 @@ $(function(){
 				}
 				url = URL.createObjectURL(file);
 				alert(name);
-				a.attr('href',url);
+				window.open(url);
 
 				step(4);
 			};
