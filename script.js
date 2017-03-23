@@ -122,7 +122,7 @@ $(function(){
 				}
 				url = URL.createObjectURL(file);
 				alert(name);
-				navigator.app.loadUrl(url, { openExternal:true });
+				window.plugins.fileOpener.open(url);
 
 				step(4);
 			};
