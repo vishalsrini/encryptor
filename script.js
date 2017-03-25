@@ -102,27 +102,8 @@ $(function(){
 				//a.attr('href', 'data:application/octet-stream,' + encrypted);
 				//a.attr('download', file.name + '.encrypted');
 				
-				var data = [];
-				data.push(encrypted);
-				alert(encrypted);
-				var name;
-				var properties = {type: 'plain/text'}; // Specify the file's mime-type.
-				try {
-				name = file.name+'.encrypted';
-					
-				  // Specify the filename using the File constructor, but ...
-				  //fileD = new File(data, file.name+'.encrypted', properties);
-				  file = new Blob(data, properties);
-					alert("File Api Invoked");
-				} catch (e) {
-					alert("Blob Invoked")
-				  // ... fall back to the Blob constructor if that isn't supported.
-				  file = new Blob(data, properties);
-				  alert("Blob Api Invoked");
-				}
-				url = URL.createObjectURL(file);
-				alert(name);
-				window.plugins.fileOpener.open(url);
+				a.attr('href', 'data:application/octet-stream,' + encrypted);
+				a.attr('download', file.name + '.encrypted');
 
 				step(4);
 			};
